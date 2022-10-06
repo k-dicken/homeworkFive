@@ -9,7 +9,12 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
+  font-family: Segoe UI;
   margin-bottom: 16px;
+}
+
+a, input, label {
+  font-family: Segoe UI;
 }
 
 .image {
@@ -18,6 +23,10 @@ h1, h2, h3, h4, h5, h6, p {
   background-size: cover;
 }
 
+@font-face {
+  font-family: Segoe UI;
+  src: url(assets/fonts/segoeui);
+}
 nav {
   height: 100px;
   width: 100%;

@@ -22,7 +22,6 @@ function initURLListener() {
 }
 
 function buyNow() {
-    // console.log("buy init");
     $("button").on("click", function (e) {
         let bookID = e.currentTarget.id;
 
@@ -62,7 +61,7 @@ function initSubmitListener() {
 }
 
 function trace(fileName, log) {
-    // console.log(fileName, log);
+    console.log(fileName, log);
 }
 
 $(document).ready(function () {
