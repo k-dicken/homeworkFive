@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+.image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+}
+nav .logo {
+  width: 18%;
+  display: flex;
+  align-items: center;
+}
+nav .logo svg {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+nav .logo h2 {
+  margin: 0;
+}
+nav input {
+  width: 34%;
+  padding: 10px 20px;
+  border: transparent;
+  background-color: rgba(91, 125, 132, 0.35);
+}
+nav input:focus {
+  border: transparent;
+  outline: none;
+}
+nav input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+nav .links {
+  width: 34%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .links a {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+nav .links a svg {
+  height: 20px;
+  width: 20px;
+  margin-left: 6px;
+}
+nav .links a svg * {
+  fill: rgb(0, 0, 0);
+}
+nav .links a:hover {
+  color: rgb(91, 125, 132);
+}
+nav .links a:hover svg * {
+  fill: rgb(91, 125, 132);
+}
+
+.home-header {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-header .header-hero {
+  height: 500px;
+  width: 80%;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: linear-gradient(rgba(91, 125, 132, 0.6), rgba(91, 125, 132, 0.6)), url("../assets/images/home-hero.jpg");
+  background-color: rgb(91, 125, 132);
+}
+.home-header .header-hero h1 {
+  color: rgb(255, 255, 255);
+}
+.home-header .header-hero h2 {
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+}
+
+.home-books {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+}
+.home-books .books-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-books .books-row .book {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.home-books .books-row .book img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 40px;
+}
+.home-books .books-row .book p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.home-books .books-row .book button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: solid 1px black;
+  background-color: transparent;
+}
+
+#books {
+  width: 100%;
+  height: 100vh;
+}
+#books .allBooks {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#books .allBooks .book {
+  display: flex;
+}
+#books .allBooks .book .bookImage {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+#books .allBooks .book .bookImage img {
+  background-color: lightblue;
+}
+#books .allBooks .book .bookInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  min-height: 100px;
+  width: 100%;
+  padding: 10px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  background-color: rgb(91, 125, 132);
+}
+footer p {
+  margin: 0;
+}
+footer .links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+}
+footer .socials a {
+  text-decoration: none;
+  margin: 0 10px;
+}
+footer .socials a svg {
+  height: 40px;
+  width: 40px;
+}
+footer .socials a svg * {
+  fill: rgb(255, 255, 255);
+}
+footer .socials a svg:hover * {
+  opacity: 45%;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,50 @@
+.home-books {
+    height: 90vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5%;
+
+    .books-row {
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .book {
+            width: 300px;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+    
+            img {
+                width: 200px;
+                height: auto;
+
+                margin-bottom: 40px;
+            }
+
+            p {
+                text-align: center;
+
+                margin-bottom: 40px;
+            }
+
+            button {
+                padding: 10px 20px;
+
+                margin-top: 20px;
+
+                border: solid 1px black;
+                background-color: transparent;
+            }
+        }
+    }
+    
+}

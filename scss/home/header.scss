@@ -1,0 +1,33 @@
+.home-header {
+    height: 70vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header-hero {
+        height: 500px;
+        width: 80%;
+
+        padding: 10%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        background-image: 
+            linear-gradient($slate-opacity, $slate-opacity),
+            url("../assets/images/home-hero.jpg");
+        background-color: $slate;
+
+        h1 {
+            color: $white;
+        }
+
+        h2 {
+            color: $white;
+            font-weight: normal;
+        }
+    }
+}

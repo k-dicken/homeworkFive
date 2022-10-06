@@ -1,0 +1,29 @@
+#books {
+    width: 100%;
+    height: 100vh;
+
+    .allBooks {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .book {
+            display: flex;
+
+            .bookImage {
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+
+                img {
+                    background-color: lightblue;
+                }
+            }
+
+            .bookInfo {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

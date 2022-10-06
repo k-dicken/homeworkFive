@@ -1,0 +1,51 @@
+footer {
+    min-height: 100px;
+    width: 100%;
+
+    padding: 10px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    color: white;
+
+    background-color: $slate;
+
+    p {
+        margin: 0;
+    }
+
+    .links {
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+    }
+
+    .socials {
+        a {
+            text-decoration: none;
+            margin: 0 10px;
+
+            svg {
+                height: 40px;
+                width: 40px;
+    
+                * {
+                    fill: $white;  
+                }
+
+            }
+
+            svg:hover {
+                * {
+                    opacity: 45%;
+                }
+            }
+        }
+        
+    }
+}
