@@ -87,7 +87,7 @@ function accountListeners() {
         $("#emailLogin").val("");
         $("#passwordLogin").val("");
 
-        user.loggedIn = true;
+        MODEL.logInUser();
 
         SwitchAccountView(user.firstName, user.email);
       }

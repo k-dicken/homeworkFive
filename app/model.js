@@ -249,6 +249,10 @@ export function logOutUser() {
   userInfo.loggedIn = false;
 }
 
+export function logInUser() {
+  userInfo.loggedIn = true;
+}
+
 export function addToCart(bookIdx) {
   cart.push(bookIdx);
   console.log(cart);
