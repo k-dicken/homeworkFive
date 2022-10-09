@@ -38,6 +38,14 @@
   button:active {
     background-color: rgb(60, 81, 85);
   }
+
+  .loggedInView {
+    display: none;
+
+    .buttonContainer {
+      margin-top: 200px;
+    }
+  }
 }
 
 @media only screen and (max-width: 875px) {

@@ -555,6 +555,12 @@ nav .links a:hover svg * {
 #account button:active {
   background-color: rgb(60, 81, 85);
 }
+#account .loggedInView {
+  display: none;
+}
+#account .loggedInView .buttonContainer {
+  margin-top: 200px;
+}
 
 @media only screen and (max-width: 875px) {
   #account {
