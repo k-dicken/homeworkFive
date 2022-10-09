@@ -1,69 +1,94 @@
 var userInfo = {};
 var bookList = [
     {
+        bookTitle: "Twilight Box Set",
         bookImage: "assets/images/twilight-box-set.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "99.99",
     },
     {
+        bookTitle: "Harry Potter Box Set",
         bookImage: "assets/images/hp-box-set.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "100",
     },
     {
+        bookTitle: "Game of Thrones Box Set",
         bookImage: "assets/images/got-box-set.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "100",
     },
     {
+        bookTitle: "Finding Me",
         bookImage: "assets/images/finding me.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "27.99",
     },
     {
+        bookTitle: "The Autobiography of Martin Luther King Jr. Edited",
         bookImage: "assets/images/mlk-biography.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "19.99",
     },
     {
+        bookTitle: "An Autobiography of Elenor Roosevelt",
         bookImage: "assets/images/elenor-roosevelt-biography.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "17.99",
     },
     {
+        bookTitle: "Misery",
         bookImage: "assets/images/misery.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "19.99",
     },
     {
+        bookTitle: "Frankenstien",
         bookImage: "assets/images/frankenstein.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "15.99",
     },
     {
+        bookTitle: "Phantoms",
         bookImage: "assets/images/phantoms.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "19.99",
     },
     {
+        bookTitle: "Winnie the Pooh",
         bookImage: "assets/images/winnie-the-pooh.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "19.99",
     },
     {
+        bookTitle: "The Cat in the Hat",
         bookImage: "assets/images/cat-and-the-hat.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "15.99",
     },
     {
+        bookTitle: "Fun Facts about Space",
         bookImage: "assets/images/fun-facts-about-space.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
         bookPrice: "7.99",
     },
     {
-        bookImage: "assets/images/",
+        bookTitle: "To Kill a Mockingbird",
+        bookImage: "assets/images/to-kill-a-mockingbird.jpg",
         bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
-        bookPrice: "",
+        bookPrice: "15.99",
+    },
+    {
+        bookTitle: "Becoming",
+        bookImage: "assets/images/becoming.jpg",
+        bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
+        bookPrice: "25.99",
+    },
+    {
+        bookTitle: "Fire-Starter",
+        bookImage: "assets/images/firestarter.jpg",
+        bookDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac.",
+        bookPrice: "19.99",
     },
 ];
 var featuredBooks = [12, 13, 14];
@@ -93,7 +118,22 @@ export function changePage(pageID, callback) {
             // console.log('data ' + data);
             $('#app').html(data);
             callback();
-            });
+            $.each(featuredBooks, function(idx, bookID){
+                console.log(bookList[bookID]);
+                $(".books-row").append(
+                    `<div class="book">
+                    <div class="book-img">
+                        <img src="${bookList[bookID].bookImage}" alt="">
+                    </div>
+                    <div class="book-info">
+                        <p class="desc">${bookList[bookID].bookDesc}</p>
+                        <p class="price">$${bookList[bookID].bookPrice}</p>
+                        <button id="${bookID}">Add to Cart</button>
+                    </div>
+                    </div>`
+                );
+            })
+        });
     } else if (pageID == "books") {
         $.get(`pages/${pageID}.html`, function (data) {
             // console.log('data ' + data);
@@ -115,7 +155,7 @@ export function changePage(pageID, callback) {
                 // $.each(bookList, function(idx, book){
                     console.log(categoryClass);
                     $(categoryClass).append(
-                        `<div class="book">
+                       `<div class="book">
                         <div class="book-img">
                             <img src="${bookList[category.books[i]].bookImage}" alt="">
                         </div>
@@ -144,7 +184,10 @@ export function changePage(pageID, callback) {
                         <img src="${bookList[cartItem].bookImage}" alt="">
                     </div>
                     <div class="book-info">
+                        <b>${bookList[cartItem].bookTitle}</b>
                         <p>$${bookList[cartItem].bookPrice}</p>
+                        <p>In Stock</p>
+                        <br>
                         <p><span>Quantity</span> 1</p>
                         <br>
                         <p><span>Total</span> $x.xx</p>

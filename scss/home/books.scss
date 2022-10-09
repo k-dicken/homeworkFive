@@ -30,19 +30,26 @@
                 margin-bottom: 40px;
             }
 
-            p {
-                text-align: center;
+            .book-info {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
 
-                margin-bottom: 40px;
-            }
-
-            button {
-                padding: 10px 20px;
-
-                margin-top: 20px;
-
-                border: solid 1px black;
-                background-color: transparent;
+                p {
+                    text-align: center;
+    
+                    margin-bottom: 40px;
+                }
+    
+                button {
+                    padding: 10px 20px;
+    
+                    margin-top: 20px;
+    
+                    border: solid 1px black;
+                    background-color: transparent;
+                }
             }
         }
     }

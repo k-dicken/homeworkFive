@@ -139,11 +139,17 @@ nav .links a:hover svg * {
   height: auto;
   margin-bottom: 40px;
 }
-.home-books .books-row .book p {
+.home-books .books-row .book .book-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.home-books .books-row .book .book-info p {
   text-align: center;
   margin-bottom: 40px;
 }
-.home-books .books-row .book button {
+.home-books .books-row .book .book-info button {
   padding: 10px 20px;
   margin-top: 20px;
   border: solid 1px black;
@@ -153,10 +159,10 @@ nav .links a:hover svg * {
 #books {
   width: 100%;
   margin-top: 60px;
+  padding: 0 80px;
 }
 #books .category {
   width: 100%;
-  padding: 0 80px;
   margin-bottom: 100px;
 }
 #books .category h3 {
@@ -202,11 +208,51 @@ nav .links a:hover svg * {
   border: rgba(0, 0, 0, 0.45) 1px solid;
 }
 
+#cart {
+  width: 100%;
+  padding: 0 80px;
+  background-color: #999;
+}
+#cart .book {
+  display: flex;
+  height: 180px;
+  width: 30%;
+}
+#cart .book .book-img {
+  height: 180px;
+  width: auto;
+  margin-right: 40px;
+}
+#cart .book .book-img img {
+  height: 180px;
+  width: auto;
+  background-color: #999;
+}
+#cart .book .book-info {
+  display: flex;
+  flex-direction: column;
+}
+#cart .book .book-info .desc {
+  min-height: 40%;
+  font-size: 12px;
+}
+#cart .book .book-info button {
+  width: 150px;
+  padding: 10px 30px;
+  text-transform: capitalize;
+  border: rgb(0, 0, 0) 1px solid;
+  background-color: transparent;
+}
+#cart .book .book-info button:hover {
+  color: rgba(0, 0, 0, 0.45);
+  border: rgba(0, 0, 0, 0.45) 1px solid;
+}
+
 footer {
   min-height: 100px;
   width: 100%;
   padding: 10px 100px;
-  margin-top: 160px;
+  margin-top: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;

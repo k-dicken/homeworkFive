@@ -1,0 +1,50 @@
+#cart {
+    width: 100%;
+    padding: 0 80px;
+
+    background-color: #999;
+
+    .book {
+        display: flex;
+        height: 180px;
+        width: 30%;
+
+        .book-img {
+            height: 180px;
+            width: auto;
+
+            margin-right: 40px;
+
+            img {
+                height: 180px;
+                width: auto;
+                background-color: #999;
+            }
+        }
+
+        .book-info {
+            display: flex;
+            flex-direction: column;
+
+            .desc {
+                min-height: 40%;
+                font-size: 12px;
+            }
+
+            button {  
+                width: 150px;
+                padding: 10px 30px;
+
+                text-transform: capitalize;
+
+                border: $black 1px solid;
+                background-color: transparent;
+            }
+
+            button:hover {
+                color: $black-grey;
+                border: $black-grey 1px solid;
+            }
+        }
+    }       
+}
