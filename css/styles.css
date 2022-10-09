@@ -530,7 +530,7 @@ nav .links a:hover svg * {
   font-size: 26px;
   margin-bottom: 25px;
 }
-#account .signUpForm .smallText {
+#account .smallText {
   margin-bottom: 0px;
 }
 #account button {
@@ -544,6 +544,53 @@ nav .links a:hover svg * {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 875px) {
+  #account {
+    flex-direction: column;
+    align-items: center;
+  }
+  #account .smallText {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+  #account .largeText {
+    font-size: 12px;
+  }
+  #account .loginForm {
+    margin-bottom: 100px;
+  }
+  #account input {
+    font-size: 11px;
+  }
+  #account .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  #account button {
+    width: 112px;
+    height: 37px;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #account .smallText {
+    font-size: 6px;
+  }
+  #account .largeText {
+    font-size: 6px;
+  }
+  #account .loginForm {
+    margin-bottom: 50px;
+  }
+  #account input {
+    font-size: 6px;
+  }
+  #account button {
+    width: 68px;
+    height: 25px;
+    font-size: 6px;
+  }
+}
 footer {
   min-height: 100px;
   width: 100%;
