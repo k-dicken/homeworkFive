@@ -202,6 +202,81 @@ nav .links a:hover svg * {
   border: rgba(0, 0, 0, 0.45) 1px solid;
 }
 
+#blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#blog .blogPostSection {
+  margin-top: 100px;
+  background-color: #587c83;
+  display: flex;
+  max-width: 1464px;
+}
+#blog .blogPostSection .bookPreviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin-left: 50px;
+  width: 600px;
+}
+#blog .blogPostSection .bookPreviews .imgContainer {
+  margin-right: 100px;
+  width: 250px;
+  height: 380px;
+}
+#blog .blogPostSection .bookPreviews img {
+  height: 100%;
+}
+#blog .blogPostSection .fullImg {
+  width: 622px;
+  height: 463px;
+}
+#blog .blogPostSection .fullImg img {
+  width: 100%;
+  height: 100%;
+}
+#blog .blogPostSection .textSide {
+  color: white;
+  margin-left: 180px;
+  margin-right: 100px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+#blog .blogPostSection .textSide h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 31px;
+}
+#blog .blogPostSection .textSide p {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+#blog .blogPostSection .textSide a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid white;
+  width: 222px;
+  height: 68px;
+  color: white;
+  text-decoration: none;
+}
+#blog .blogPostSection .textSide a:hover {
+  background-color: white;
+  color: #587c83;
+}
+#blog .blogPostSection .textSide a:active {
+  background-color: rgb(200, 200, 200);
+  border: none;
+}
+
 footer {
   min-height: 100px;
   width: 100%;
