@@ -1,0 +1,44 @@
+#about {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 0 80px;
+
+    .about-section {
+        display: flex;
+        justify-content: space-between; 
+        margin: 100px 0;
+
+        .about-img {
+            height: 500px;
+            min-width: 300px;
+            // width: auto;
+            overflow: hidden;
+
+            margin-right: 40px;
+
+            img {
+                height: 500px;
+                width: auto;
+            }
+        }
+    }
+
+    .about-desc {
+        display: flex;
+        align-items: center;
+        // justify-content: fl; 
+        flex-direction: column;
+
+        h3 {
+            margin-top: 40px;
+        }
+
+        p {
+            margin-top: 60px;
+        }
+    }
+}

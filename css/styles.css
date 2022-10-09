@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 16px;
 }
 
-a, input, label {
+a, input, label, b {
   font-family: Segoe UI;
 }
 
@@ -34,6 +34,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 20px 60px;
+  margin-bottom: 40px;
 }
 nav .logo {
   width: 18%;
@@ -156,6 +157,40 @@ nav .links a:hover svg * {
   background-color: transparent;
 }
 
+#about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 80px;
+}
+#about .about-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0;
+}
+#about .about-section .about-img {
+  height: 500px;
+  min-width: 300px;
+  overflow: hidden;
+  margin-right: 40px;
+}
+#about .about-section .about-img img {
+  height: 500px;
+  width: auto;
+}
+#about .about-desc {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#about .about-desc h3 {
+  margin-top: 40px;
+}
+#about .about-desc p {
+  margin-top: 60px;
+}
+
 #books {
   width: 100%;
   margin-top: 60px;
@@ -179,13 +214,17 @@ nav .links a:hover svg * {
   width: 30%;
 }
 #books .category .category-content .book .book-img {
-  height: 180px;
-  width: auto;
+  height: 200px;
+  min-width: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   margin-right: 40px;
 }
 #books .category .category-content .book .book-img img {
-  height: 180px;
-  width: auto;
+  height: auto;
+  width: 120px;
   background-color: #999;
 }
 #books .category .category-content .book .book-info {
@@ -376,7 +415,6 @@ nav .links a:hover svg * {
   background-color: rgb(91, 125, 132);
 }
 #blogpost .blogpost-header .blogpost-hero {
-  margin-top: 75px;
   height: 500px;
   width: 80%;
   padding: 10%;
@@ -605,21 +643,26 @@ nav .links a:hover svg * {
 }
 #cart {
   width: 100%;
+  min-height: 90vh;
   padding: 0 80px;
-  background-color: #999;
 }
 #cart .book {
+  height: 400px;
+  width: 100%;
   display: flex;
-  height: 180px;
-  width: 30%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.45);
 }
 #cart .book .book-img {
-  height: 180px;
-  width: auto;
-  margin-right: 40px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 80px;
 }
 #cart .book .book-img img {
-  height: 180px;
+  height: 200px;
   width: auto;
   background-color: #999;
 }

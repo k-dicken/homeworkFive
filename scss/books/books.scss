@@ -22,14 +22,19 @@
                 width: 30%;
 
                 .book-img {
-                    height: 180px;
-                    width: auto;
+                    height: 200px;
+                    min-width: 120px;
+                    overflow: hidden;
+
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
 
                     margin-right: 40px;
 
                     img {
-                        height: 180px;
-                        width: auto;
+                        height: auto;
+                        width: 120px;
                         background-color: #999;
                     }
                 }
