@@ -1,0 +1,70 @@
+#blogpost {
+  .blogpost-header {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mlk {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/february-favorites-hero.jpg");
+      background-color: $slate;
+    }
+
+    .blogpost-hero {
+      height: 500px;
+      width: 80%;
+      padding: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        color: $white;
+      }
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        font-size: 26px;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+
+      p {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bookPost {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 100px;
+
+    .imgContainer {
+      width: 250px;
+      height: 380px;
+      margin-right: 2em;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .textSide {
+      h1 {
+        font-size: 26px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

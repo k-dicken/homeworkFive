@@ -209,7 +209,7 @@ nav .links a:hover svg * {
 }
 #blog .blogPostSection {
   margin-top: 100px;
-  background-color: #587c83;
+  background-color: rgb(91, 125, 132);
   display: flex;
   max-width: 1464px;
 }
@@ -238,7 +238,7 @@ nav .links a:hover svg * {
   height: 100%;
 }
 #blog .blogPostSection .textSide {
-  color: white;
+  color: rgb(255, 255, 255);
   margin-left: 180px;
   margin-right: 100px;
   margin-top: 40px;
@@ -262,19 +262,76 @@ nav .links a:hover svg * {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid white;
+  border: 1px solid rgb(255, 255, 255);
   width: 222px;
   height: 68px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 #blog .blogPostSection .textSide a:hover {
-  background-color: white;
-  color: #587c83;
+  background-color: rgb(255, 255, 255);
+  color: rgb(91, 125, 132);
 }
 #blog .blogPostSection .textSide a:active {
   background-color: rgb(200, 200, 200);
   border: none;
+}
+
+#blogpost .blogpost-header {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#blogpost .blogpost-header .mlk {
+  background-image: linear-gradient(rgba(91, 125, 132, 0.6), rgba(91, 125, 132, 0.6)), url("/assets/images/february-favorites-hero.jpg");
+  background-color: rgb(91, 125, 132);
+}
+#blogpost .blogpost-header .blogpost-hero {
+  height: 500px;
+  width: 80%;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#blogpost .blogpost-header .blogpost-hero h1 {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+#blogpost .blogpost-header .blogpost-hero h2 {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#blogpost .blogpost-header .blogpost-hero p {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+#blogpost .bookPost {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 100px;
+}
+#blogpost .bookPost .imgContainer {
+  width: 250px;
+  height: 380px;
+  margin-right: 2em;
+}
+#blogpost .bookPost .imgContainer img {
+  height: 100%;
+}
+#blogpost .bookPost .textSide h1 {
+  font-size: 26px;
+  margin-bottom: 50px;
 }
 
 footer {
