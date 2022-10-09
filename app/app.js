@@ -64,7 +64,15 @@ function initSubmitListener() {
 }
 
 function accountListeners() {
+  let user = MODEL.getUserInfo();
+
+  if (user.loggedIn == true) {
+    SwitchAccountView(user.firstName, user.email);
+  }
+
   $("#submitLogIn").on("click", function (e) {
+    let user = MODEL.getUserInfo();
+
     let em = $("#emailLogin").val();
     let pw = $("#passwordLogin").val();
 
@@ -73,14 +81,16 @@ function accountListeners() {
     } else if (pw == "") {
       alert("Please enter your password.");
     } else {
-      if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+      if (jQuery.isEmptyObject(user)) {
         alert("No account found. Try signing up first.");
-      } else {
-        alert("You are already logged in.");
-      }
+      } else if (em == user.email && pw == user.password) {
+        $("#emailLogin").val("");
+        $("#passwordLogin").val("");
 
-      $("#emailLogin").val("");
-      $("#passwordLogin").val("");
+        MODEL.logInUser();
+
+        SwitchAccountView(user.firstName, user.email);
+      }
     }
   });
 
@@ -104,11 +114,14 @@ function accountListeners() {
         lastName: ln,
         email: em,
         password: pw,
+        loggedIn: true,
       };
 
       MODEL.setUserInfo(userObj);
 
       $("#username").html(fn);
+
+      SwitchAccountView(fn, em);
 
       $("#fName").val("");
       $("#lName").val("");
@@ -118,23 +131,43 @@ function accountListeners() {
   });
 }
 
+function SwitchAccountView(firstName, email) {
+  $(".loginForm").css("display", "none");
+  $(".signUpForm").css("display", "none");
+  $(".loggedInView").css("display", "block");
+
+  $("#welcomeText").html(`Welcome, ${firstName}!`);
+  $("#emailText").html(`${email}`);
+
+  $("#logOut").on("click", function (e) {
+    MODEL.logOutUser();
+    $("#username").html("Account");
+
+    $(".loginForm").css("display", "block");
+    $(".signUpForm").css("display", "block");
+    $(".loggedInView").css("display", "none");
+  });
+}
+
 function blogListeners() {
+  let user = MODEL.getUserInfo();
+
   $("#feb").on("click", function (e) {
-    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+    if (jQuery.isEmptyObject(user) || user.loggedIn == false) {
       e.preventDefault();
       alert("Please log in to view this page.");
     }
   });
 
   $("#club").on("click", function (e) {
-    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+    if (jQuery.isEmptyObject(user) || user.loggedIn == false) {
       e.preventDefault();
       alert("Please log in to view this page.");
     }
   });
 
   $("#eReading").on("click", function (e) {
-    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+    if (jQuery.isEmptyObject(user) || user.loggedIn == false) {
       e.preventDefault();
       alert("Please log in to view this page.");
     }

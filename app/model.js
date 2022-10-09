@@ -253,6 +253,14 @@ export function getUserInfo() {
   return userInfo;
 }
 
+export function logOutUser() {
+  userInfo.loggedIn = false;
+}
+
+export function logInUser() {
+  userInfo.loggedIn = true;
+}
+
 export function addToCart(bookIdx) {
   var dupCart = false;
   var cartObj = {
