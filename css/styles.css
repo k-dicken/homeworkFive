@@ -543,6 +543,12 @@ nav .links a:hover svg * {
   margin-top: 10px;
   cursor: pointer;
 }
+#account button:hover {
+  background-color: rgb(120, 166, 175);
+}
+#account button:active {
+  background-color: rgb(60, 81, 85);
+}
 
 @media only screen and (max-width: 875px) {
   #account {

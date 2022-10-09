@@ -30,6 +30,14 @@
     margin-top: 10px;
     cursor: pointer;
   }
+
+  button:hover {
+    background-color: rgb(120, 166, 175);
+  }
+
+  button:active {
+    background-color: rgb(60, 81, 85);
+  }
 }
 
 @media only screen and (max-width: 875px) {
