@@ -1,0 +1,232 @@
+#blogpost {
+  .blogpost-header {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mlk {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/february-favorites-hero.jpg");
+      background-color: $slate;
+    }
+
+    .bookclub {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/book-club-hero.jpg");
+      background-color: $slate;
+    }
+
+    .ereading {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/eread-hero.jpg");
+      background-color: $slate;
+    }
+
+    .blogpost-hero {
+      margin-top: 75px;
+      height: 500px;
+      width: 80%;
+      padding: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        color: $white;
+      }
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        font-size: 26px;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+
+      p {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bookPost {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 100px;
+
+    .imgContainer {
+      width: 250px;
+      height: 380px;
+      margin-right: 2em;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .textSide {
+      h1 {
+        font-size: 26px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .blogpostContent {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 100px;
+
+    .imgContainer {
+      max-width: 622px;
+      height: 464px;
+      margin-right: 2.5em;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .textSide {
+      margin-bottom: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  #blogpost {
+    .blogpost-header {
+      .blogpost-hero {
+        height: 275px;
+
+        h1 {
+          font-size: 12px;
+        }
+
+        h2 {
+          font-size: 11px;
+        }
+
+        p {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .bookPost {
+      .imgContainer {
+        width: 99px;
+        height: 150px;
+      }
+
+      .textSide {
+        h1 {
+          font-size: 12px;
+          margin-bottom: 25px;
+        }
+
+        p {
+          font-size: 11px;
+        }
+
+        #secondParagraph {
+          display: none;
+        }
+      }
+    }
+
+    .blogpostContent {
+      .imgContainer {
+        max-width: 260px;
+        height: 205px;
+        margin-right: 2em;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .textSide {
+        p {
+          font-size: 11px;
+        }
+
+        #extra {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #blogpost {
+    .blogpost-header {
+      .blogpost-hero {
+        height: 175px;
+
+        h1 {
+          font-size: 6px;
+        }
+
+        h2 {
+          font-size: 6px;
+        }
+
+        p {
+          font-size: 6px;
+        }
+      }
+    }
+
+    .bookPost {
+      .imgContainer {
+        width: 50px;
+        height: 76px;
+      }
+
+      .textSide {
+        h1 {
+          font-size: 6px;
+          margin-bottom: 15px;
+        }
+
+        p {
+          font-size: 6px;
+        }
+
+        #secondParagraph {
+          display: none;
+        }
+      }
+    }
+
+    .blogpostContent {
+      .imgContainer {
+        max-width: 114px;
+        height: 95px;
+        margin-right: 1.5em;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .textSide {
+        p {
+          font-size: 6px;
+        }
+      }
+    }
+  }
+}

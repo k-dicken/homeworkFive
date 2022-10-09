@@ -93,23 +93,23 @@ var bookList = [
 ];
 var featuredBooks = [12, 13, 14];
 var bookCategories = [
-    {
-        category: "Booklets",
-        books: [0, 1, 2]
-    },
-    {
-        category: "Black History Books",
-        books: [3, 4, 5]
-    },
-    {
-        category: "Horror Books",
-        books: [6, 7, 8]
-    },
-    {
-        category: "Children's Books",
-        books: [9, 10, 11]
-    },
-]
+  {
+    category: "Booklets",
+    books: [0, 1, 2],
+  },
+  {
+    category: "Black History Books",
+    books: [3, 4, 5],
+  },
+  {
+    category: "Horror Books",
+    books: [6, 7, 8],
+  },
+  {
+    category: "Children's Books",
+    books: [9, 10, 11],
+  },
+];
 var cart = [];
 
 export function changePage(pageID, callback) {
@@ -146,7 +146,7 @@ export function changePage(pageID, callback) {
                     <div class="${categoryClass} category-content">
                     </div>
                     </div>`
-                );
+        );
 
                 categoryClass = "." + categoryClass
                 
@@ -157,29 +157,35 @@ export function changePage(pageID, callback) {
                     $(categoryClass).append(
                        `<div class="book">
                         <div class="book-img">
-                            <img src="${bookList[category.books[i]].bookImage}" alt="">
+                            <img src="${
+                              bookList[category.books[i]].bookImage
+                            }" alt="">
                         </div>
                         <div class="book-info">
-                            <p class="desc">${bookList[category.books[i]].bookDesc}</p>
-                            <p class="price">$${bookList[category.books[i]].bookPrice}</p>
-                            <button id="${category.books[i]}">Add to Cart</button>
+                            <p class="desc">${
+                              bookList[category.books[i]].bookDesc
+                            }</p>
+                            <p class="price">$${
+                              bookList[category.books[i]].bookPrice
+                            }</p>
+                            <button id="${
+                              category.books[i]
+                            }">Add to Cart</button>
                         </div>
                         </div>`
-                    );
-                // })
-                }    
-                
-
-            })
-            callback();
-        });
-    } else if (pageID == "cart") {
-        $.get(`pages/${pageID}.html`, function (data) {
-            // console.log('data ' + data);
-            $('#app').html(data);
-            $.each(cart, function(idx, cartItem){
-                $(".items").append(
-                    `<div class="book">
+          );
+          // })
+        }
+      });
+      callback();
+    });
+  } else if (pageID == "cart") {
+    $.get(`pages/${pageID}.html`, function (data) {
+      // console.log('data ' + data);
+      $("#app").html(data);
+      $.each(cart, function (idx, cartItem) {
+        $(".items").append(
+          `<div class="book">
                     <div class="book-img">
                         <img src="${bookList[cartItem].bookImage}" alt="">
                     </div>
@@ -193,24 +199,38 @@ export function changePage(pageID, callback) {
                         <p><span>Total</span> $x.xx</p>
                     </div>
                     </div>`
-                );
-            })
-            // callback();
-        });
-    } else {
-        $.get(`pages/${pageID}.html`, function (data) {
-            // console.log('data ' + data);
-            $('#app').html(data);
-        });
-    }
+        );
+      });
+      // callback();
+    });
+  } else if (pageID == "blog") {
+    $.get(`pages/${pageID}.html`, function (data) {
+      $("#app").html(data);
+      callback();
+    });
+  } else if (pageID == "account") {
+    $.get(`pages/${pageID}.html`, function (data) {
+      $("#app").html(data);
+      callback();
+    });
+  } else {
+    $.get(`pages/${pageID}.html`, function (data) {
+      // console.log('data ' + data);
+      $("#app").html(data);
+    });
+  }
 }
 
 export function setUserInfo(userObject) {
-    userInfo = userObject;
-    console.log(userInfo);
+  userInfo = userObject;
+  console.log(userInfo);
+}
+
+export function getUserInfo() {
+  return userInfo;
 }
 
 export function addToCart(bookIdx) {
-    cart.push(bookIdx);
-    console.log(cart);
+  cart.push(bookIdx);
+  console.log(cart);
 }

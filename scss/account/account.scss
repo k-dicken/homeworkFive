@@ -1,0 +1,102 @@
+#account {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 125px;
+  margin-bottom: 35vh;
+
+  input {
+    display: block;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+
+  .largeText {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .smallText {
+    margin-bottom: 0px;
+  }
+
+  button {
+    color: $white;
+    background-color: $slate;
+    border: none;
+    width: 170px;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(120, 166, 175);
+  }
+
+  button:active {
+    background-color: rgb(60, 81, 85);
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  #account {
+    flex-direction: column;
+    align-items: center;
+
+    .smallText {
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+
+    .largeText {
+      font-size: 12px;
+    }
+
+    .loginForm {
+      margin-bottom: 100px;
+    }
+
+    input {
+      font-size: 11px;
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      width: 112px;
+      height: 37px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #account {
+    .smallText {
+      font-size: 6px;
+    }
+
+    .largeText {
+      font-size: 6px;
+    }
+
+    .loginForm {
+      margin-bottom: 50px;
+    }
+
+    input {
+      font-size: 6px;
+    }
+
+    button {
+      width: 68px;
+      height: 25px;
+      font-size: 6px;
+    }
+  }
+}
