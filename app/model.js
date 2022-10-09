@@ -196,6 +196,10 @@ export function setUserInfo(userObject) {
   console.log(userInfo);
 }
 
+export function getUserInfo() {
+  return userInfo;
+}
+
 export function addToCart(bookIdx) {
   cart.push(bookIdx);
   console.log(cart);

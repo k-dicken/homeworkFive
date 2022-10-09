@@ -73,7 +73,11 @@ function accountListeners() {
     } else if (pw == "") {
       alert("Please enter your password.");
     } else {
-      // log the user in.
+      if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+        alert("No account found. Try signing up first.");
+      } else {
+        alert("You are already logged in.");
+      }
 
       $("#emailLogin").val("");
       $("#passwordLogin").val("");
@@ -95,7 +99,16 @@ function accountListeners() {
     } else if (pw == "") {
       alert("Please provide a password.");
     } else {
-      // sign up the user.
+      let userObj = {
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        password: pw,
+      };
+
+      MODEL.setUserInfo(userObj);
+
+      $("#username").html(fn);
 
       $("#fName").val("");
       $("#lName").val("");
@@ -107,18 +120,24 @@ function accountListeners() {
 
 function blogListeners() {
   $("#feb").on("click", function (e) {
-    // e.preventDefault();
-    console.log("hi");
+    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+      e.preventDefault();
+      alert("Please log in to view this page.");
+    }
   });
 
   $("#club").on("click", function (e) {
-    // e.preventDefault();
-    console.log("hi2");
+    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+      e.preventDefault();
+      alert("Please log in to view this page.");
+    }
   });
 
   $("#eReading").on("click", function (e) {
-    // e.preventDefault();
-    console.log("hi3");
+    if (jQuery.isEmptyObject(MODEL.getUserInfo())) {
+      e.preventDefault();
+      alert("Please log in to view this page.");
+    }
   });
 }
 
