@@ -288,6 +288,14 @@ nav .links a:hover svg * {
   background-image: linear-gradient(rgba(91, 125, 132, 0.6), rgba(91, 125, 132, 0.6)), url("/assets/images/february-favorites-hero.jpg");
   background-color: rgb(91, 125, 132);
 }
+#blogpost .blogpost-header .bookclub {
+  background-image: linear-gradient(rgba(91, 125, 132, 0.6), rgba(91, 125, 132, 0.6)), url("/assets/images/book-club-hero.jpg");
+  background-color: rgb(91, 125, 132);
+}
+#blogpost .blogpost-header .ereading {
+  background-image: linear-gradient(rgba(91, 125, 132, 0.6), rgba(91, 125, 132, 0.6)), url("/assets/images/eread-hero.jpg");
+  background-color: rgb(91, 125, 132);
+}
 #blogpost .blogpost-header .blogpost-hero {
   height: 500px;
   width: 80%;
@@ -332,6 +340,23 @@ nav .links a:hover svg * {
 #blogpost .bookPost .textSide h1 {
   font-size: 26px;
   margin-bottom: 50px;
+}
+#blogpost .blogpostContent {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 100px;
+}
+#blogpost .blogpostContent .imgContainer {
+  max-width: 622px;
+  height: 464px;
+  margin-right: 2.5em;
+}
+#blogpost .blogpostContent .imgContainer img {
+  width: 100%;
+}
+#blogpost .blogpostContent .textSide {
+  margin-bottom: 150px;
 }
 
 footer {

@@ -12,6 +12,18 @@
       background-color: $slate;
     }
 
+    .bookclub {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/book-club-hero.jpg");
+      background-color: $slate;
+    }
+
+    .ereading {
+      background-image: linear-gradient($slate-opacity, $slate-opacity),
+        url("/assets/images/eread-hero.jpg");
+      background-color: $slate;
+    }
+
     .blogpost-hero {
       height: 500px;
       width: 80%;
@@ -65,6 +77,27 @@
         font-size: 26px;
         margin-bottom: 50px;
       }
+    }
+  }
+
+  .blogpostContent {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 100px;
+
+    .imgContainer {
+      max-width: 622px;
+      height: 464px;
+      margin-right: 2.5em;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .textSide {
+      margin-bottom: 150px;
     }
   }
 }
