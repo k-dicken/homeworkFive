@@ -561,8 +561,8 @@ nav .links a:hover svg * {
 #account {
   display: flex;
   justify-content: space-around;
-  margin-top: 125px;
-  margin-bottom: 35vh;
+  align-items: center;
+  min-height: 70vh;
 }
 #account input {
   display: block;
