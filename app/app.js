@@ -86,10 +86,11 @@ function accountListeners() {
       } else if (em == user.email && pw == user.password) {
         $("#emailLogin").val("");
         $("#passwordLogin").val("");
+        $("#username").html(user.firstName);
 
         MODEL.logInUser();
 
-        SwitchAccountView(user.firstName, user.email);
+        SwitchAccountView(user.firstName, user.lastName, user.email);
       }
     }
   });
@@ -121,7 +122,7 @@ function accountListeners() {
 
       $("#username").html(fn);
 
-      SwitchAccountView(fn, em);
+      SwitchAccountView(fn, ln, em);
 
       $("#fName").val("");
       $("#lName").val("");
@@ -131,13 +132,14 @@ function accountListeners() {
   });
 }
 
-function SwitchAccountView(firstName, email) {
+function SwitchAccountView(firstName, lastName, email) {
   $(".loginForm").css("display", "none");
   $(".signUpForm").css("display", "none");
   $(".loggedInView").css("display", "block");
 
   $("#welcomeText").html(`Welcome, ${firstName}!`);
-  $("#emailText").html(`${email}`);
+  $("#nameDetails").html(`Name: ${firstName} ${lastName}`)
+  $("#emailDetails").html(`Email: ${email}`);
 
   $("#logOut").on("click", function (e) {
     MODEL.logOutUser();

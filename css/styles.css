@@ -596,6 +596,17 @@ nav .links a:hover svg * {
 #account .loggedInView {
   display: none;
 }
+#account .loggedInView .imgContainer {
+  border-radius: 100px;
+  overflow: hidden;
+  max-width: 100px;
+  min-height: 100px;
+  margin: 0 auto;
+}
+#account .loggedInView .imgContainer img {
+  width: 100%;
+  height: 100%;
+}
 #account .loggedInView .buttonContainer {
   margin-top: 200px;
 }
