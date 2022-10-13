@@ -259,6 +259,7 @@ nav .links a:hover svg * {
   display: flex;
   justify-content: space-between;
   width: 75%;
+  overflow: hidden;
 }
 #blog .blogPostSection .bookPreviews {
   display: flex;
@@ -278,13 +279,13 @@ nav .links a:hover svg * {
 }
 #blog .blogPostSection .fullImg {
   max-width: 622px;
-  min-width: 622px;
-  height: 463px;
+  height: inherit;
   margin-right: 100px;
+  overflow: hidden;
 }
 #blog .blogPostSection .fullImg img {
-  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 #blog .blogPostSection .textSide {
   color: rgb(255, 255, 255);
@@ -336,12 +337,15 @@ nav .links a:hover svg * {
     height: 146px;
   }
   #blog .blogPostSection .fullImg {
-    display: flex;
-    align-self: center;
     max-width: 300px;
-    min-width: 300px;
-    height: 229px;
+    height: inherit;
     margin-right: 20px;
+    overflow: hidden;
+  }
+  #blog .blogPostSection .fullImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   #blog .blogPostSection .textSide {
     margin-top: 20px;
@@ -362,19 +366,15 @@ nav .links a:hover svg * {
   }
 }
 @media only screen and (max-width: 700px) {
-  #blog .blogPostSection .bookPreviews {
-    margin-left: 10px;
-    margin: 0 auto;
-    padding-right: 0px;
-  }
   #blog .blogPostSection .bookPreviews .imgContainer {
     width: 45px;
     height: 69px;
+    margin-right: 20px;
+  }
+  #blog .blogPostSection .bookPreviews .imgContainer:last-child {
+    margin-right: 0px;
   }
   #blog .blogPostSection .fullImg {
-    max-width: 165px;
-    min-width: 165px;
-    height: 118px;
     margin-right: 15px;
   }
   #blog .blogPostSection .textSide {
