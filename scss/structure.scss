@@ -17,6 +17,10 @@ a, input, label, b {
     font-family: Segoe UI;
 }
 
+#app {
+    min-height: 100vh;
+}
+
 .image {
     background-position: center;
     background-repeat: no-repeat;

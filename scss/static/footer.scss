@@ -50,3 +50,20 @@ footer {
         
     }
 }
+
+@media only screen and (max-width: 875px) {
+    footer {
+        flex-direction: column;
+
+        padding: 40px 0;
+        
+        p {
+            margin-bottom: 20px;
+        }
+
+        .links {
+            margin-bottom: 20px;
+        }
+
+    }
+}

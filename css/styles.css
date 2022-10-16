@@ -17,6 +17,10 @@ a, input, label, b {
   font-family: Segoe UI;
 }
 
+#app {
+  min-height: 100vh;
+}
+
 .image {
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +32,7 @@ a, input, label, b {
   src: url(assets/fonts/segoeui);
 }
 nav {
-  height: 100px;
+  min-height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -37,7 +41,6 @@ nav {
   margin-bottom: 40px;
 }
 nav .logo {
-  width: 18%;
   display: flex;
   align-items: center;
 }
@@ -50,8 +53,9 @@ nav .logo h2 {
   margin: 0;
 }
 nav input {
-  width: 34%;
+  width: 30%;
   padding: 10px 20px;
+  margin: 0 40px;
   border: transparent;
   background-color: rgba(91, 125, 132, 0.35);
 }
@@ -63,7 +67,7 @@ nav input::placeholder {
   color: rgba(0, 0, 0, 0.45);
 }
 nav .links {
-  width: 34%;
+  min-width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,6 +91,30 @@ nav .links a:hover {
 }
 nav .links a:hover svg * {
   fill: rgb(91, 125, 132);
+}
+
+@media only screen and (max-width: 875px) {
+  nav {
+    flex-direction: column;
+  }
+  nav .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    text-align: center;
+  }
+  nav input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  nav .links {
+    width: 100%;
+  }
+}
+#home {
+  min-height: 300vh;
 }
 
 .home-header {
@@ -123,6 +151,7 @@ nav .links a:hover svg * {
   padding: 5%;
 }
 .home-books .books-row {
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -157,6 +186,17 @@ nav .links a:hover svg * {
   background-color: transparent;
 }
 
+@media only screen and (max-width: 875px) {
+  .home-books {
+    margin-top: 80px;
+  }
+  .home-books .books-row {
+    flex-direction: column;
+  }
+  .home-books .books-row .book {
+    margin-bottom: 60px;
+  }
+}
 #about {
   width: 100%;
   display: flex;
@@ -166,6 +206,7 @@ nav .links a:hover svg * {
 }
 #about .about-section {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 100px 0;
 }
@@ -179,18 +220,42 @@ nav .links a:hover svg * {
   height: 500px;
   width: auto;
 }
-#about .about-desc {
+#about .about-section .about-desc {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-#about .about-desc h3 {
+#about .about-section .about-desc h3 {
   margin-top: 40px;
 }
-#about .about-desc p {
+#about .about-section .about-desc p {
   margin-top: 60px;
 }
 
+@media only screen and (max-width: 875px) {
+  #about .about-section {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #about .about-section .about-img {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  #about .about-section .about-img img {
+    width: 100%;
+    height: auto;
+  }
+  #about .about-section .about-desc {
+    text-align: center;
+  }
+}
 #books {
   width: 100%;
   margin-top: 60px;
@@ -207,15 +272,16 @@ nav .links a:hover svg * {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #books .category .category-content .book {
   display: flex;
-  height: 180px;
+  min-height: 180px;
   width: 30%;
 }
 #books .category .category-content .book .book-img {
-  height: 200px;
-  min-width: 120px;
+  max-height: 200px;
+  min-width: 40%;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
@@ -223,11 +289,12 @@ nav .links a:hover svg * {
   margin-right: 40px;
 }
 #books .category .category-content .book .book-img img {
-  height: auto;
-  width: 120px;
+  height: 200px;
+  min-width: 40%;
   background-color: #999;
 }
 #books .category .category-content .book .book-info {
+  width: 45%;
   display: flex;
   flex-direction: column;
 }
@@ -247,6 +314,15 @@ nav .links a:hover svg * {
   border: rgba(0, 0, 0, 0.45) 1px solid;
 }
 
+@media only screen and (max-width: 1100px) {
+  #books .category .category-content {
+    flex-direction: column;
+  }
+  #books .category .category-content .book {
+    width: 100%;
+    margin: 40px 0;
+  }
+}
 #blog {
   display: flex;
   flex-direction: column;
@@ -725,6 +801,19 @@ footer .socials a svg * {
 }
 footer .socials a svg:hover * {
   opacity: 45%;
+}
+
+@media only screen and (max-width: 875px) {
+  footer {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+  footer p {
+    margin-bottom: 20px;
+  }
+  footer .links {
+    margin-bottom: 20px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -9,6 +9,7 @@
     padding: 5%;
 
     .books-row {
+        height: 100vh;
         width: 100%;
         
         display: flex;
@@ -54,4 +55,18 @@
         }
     }
     
+}
+
+@media only screen and (max-width: 875px)  {
+    .home-books {
+        margin-top: 80px;
+
+        .books-row {
+            flex-direction: column;
+
+            .book {
+                margin-bottom: 60px;
+            }
+        }
+    }
 }
