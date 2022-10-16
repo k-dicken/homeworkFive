@@ -18,7 +18,7 @@ a, input, label, b {
 }
 
 #app {
-  min-height: 100vh;
+  height: fit-content;
 }
 
 .image {
@@ -114,7 +114,7 @@ nav .links a:hover svg * {
   }
 }
 #home {
-  min-height: 300vh;
+  height: fit-content;
 }
 
 .home-header {
@@ -143,7 +143,7 @@ nav .links a:hover svg * {
 }
 
 .home-books {
-  height: 90vh;
+  height: fit-content;
   width: 100%;
   display: flex;
   align-items: center;
@@ -151,7 +151,6 @@ nav .links a:hover svg * {
   padding: 5%;
 }
 .home-books .books-row {
-  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -725,7 +724,7 @@ nav .links a:hover svg * {
 }
 #cart {
   width: 100%;
-  min-height: 90vh;
+  min-height: 80vh;
   padding: 0 80px;
 }
 #cart .book {
@@ -755,6 +754,16 @@ nav .links a:hover svg * {
 #cart .book .book-info .desc {
   min-height: 40%;
   font-size: 12px;
+}
+#cart .book .book-info .quantity span {
+  font-weight: bold;
+}
+#cart .book .book-info .quantity a {
+  margin: 0 10px;
+}
+#cart .book .book-info .quantity a:hover {
+  cursor: pointer;
+  color: rgb(91, 125, 132);
 }
 #cart .book .book-info button {
   width: 150px;

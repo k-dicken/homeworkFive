@@ -9,11 +9,13 @@ function changeRoute() {
   if (pageID == "" || pageID == "home") {
     MODEL.changePage(pageID, initSubmitListener);
   } else if (pageID == "books") {
-    MODEL.changePage(pageID, buyNow);
+    MODEL.changePage(pageID, bookListeners);
   } else if (pageID == "blog") {
     MODEL.changePage(pageID, blogListeners);
   } else if (pageID == "account") {
     MODEL.changePage(pageID, accountListeners);
+  } else if (pageID == "cart") {
+    MODEL.changePage(pageID, cartListeners);
   } else {
     MODEL.changePage(pageID);
   }
@@ -24,7 +26,7 @@ function initURLListener() {
   changeRoute();
 }
 
-function buyNow() {
+function bookListeners() {
   $("button").on("click", function (e) {
     let bookID = e.currentTarget.id;
 
@@ -174,8 +176,29 @@ function blogListeners() {
   });
 }
 
+function cartListeners() {
+  // console.log("cartListeners", $("#add"));
+  // console.log("cartListeners", $("#subtract"));
+
+  $("#add").on("click", function (e) {
+    let cartID = e.currentTarget.dataset.id;
+
+    MODEL.cartAdd(cartID);
+    MODEL.changePage("cart", cartListeners);
+    // console.log("add");
+  });
+
+  $("#subtract").on("click", function (e) {
+    let cartID = e.currentTarget.dataset.id;
+
+    MODEL.cartSubtract(cartID);
+    MODEL.changePage("cart", cartListeners);
+    // console.log("subtract");
+  });
+}
+
 function trace(fileName, log) {
-  console.log(fileName, log);
+  // console.log(fileName, log);
 }
 
 $(document).ready(function () {

@@ -166,30 +166,18 @@ export function changePage(pageID, callback) {
         categoryClass = "." + categoryClass;
 
         for (var i = 0; i < category.books.length; i++) {
-          // console.log(bookList[category.books[i]]);
-          // $.each(bookList, function(idx, book){
-          console.log(categoryClass);
           $(categoryClass).append(
             `<div class="book">
-                        <div class="book-img">
-                            <img src="${
-                              bookList[category.books[i]].bookImage
-                            }" alt="">
-                        </div>
-                        <div class="book-info">
-                            <p class="desc">${
-                              bookList[category.books[i]].bookDesc
-                            }</p>
-                            <p class="price">$${
-                              bookList[category.books[i]].bookPrice
-                            }</p>
-                            <button id="${
-                              category.books[i]
-                            }">Add to Cart</button>
-                        </div>
-                        </div>`
+              <div class="book-img">
+                <img src="${bookList[category.books[i]].bookImage}" alt="">
+              </div>
+              <div class="book-info">
+                <p class="desc">${bookList[category.books[i]].bookDesc}</p>
+                <p class="price">$${bookList[category.books[i]].bookPrice}</p>
+                <button id="${category.books[i]}">Add to Cart</button>
+            </div>
+            </div>`
           );
-          // })
         }
       });
       callback();
@@ -198,15 +186,6 @@ export function changePage(pageID, callback) {
     $.get(`pages/${pageID}.html`, function (data) {
       $("#app").html(data);
       $.each(cart, function (idx, cartItem) {
-        // var quantity = 1;
-        // var displayCart = cart;
-        // for (var i = 0; i < cart.length; i++) {
-        //   if (displayCart[i] == idx) {
-        //     //     displayCart.splice(i, 1);
-        //     quantity++;
-        //     console.log(displayCart[i], idx, quantity);
-        //   }
-        // }
         $(".items").append(
           `<div class="book">
             <div class="book-img">
@@ -217,14 +196,16 @@ export function changePage(pageID, callback) {
             <b class="price">$${bookList[cartItem.id].bookPrice}</b>
             <p class="stock">In Stock</p>
             <br>
-            <p class="quantity"><span>Qty:  </span>${cartItem.qty}
-              <a id="change">change</a> | <a id="delete">delete</a>
-            </p>
+            <div class="quantity"><span>Qty:  </span>${cartItem.qty}
+              <a id="add" data-id="${idx}">+</a> 
+              |
+              <a id="subtract" data-id="${idx}">-</a>
+            </div>
             </div>
             </div>`
         );
       });
-      // callback();
+      callback();
     });
   } else if (pageID == "blog") {
     $.get(`pages/${pageID}.html`, function (data) {
@@ -244,6 +225,7 @@ export function changePage(pageID, callback) {
   }
 }
 
+// LOGIN FUNCTIONS
 export function setUserInfo(userObject) {
   userInfo = userObject;
   console.log(userInfo);
@@ -261,6 +243,7 @@ export function logInUser() {
   userInfo.loggedIn = true;
 }
 
+//CART FUNCTIONS
 export function addToCart(bookIdx) {
   var dupCart = false;
   var cartObj = {
@@ -282,4 +265,17 @@ export function addToCart(bookIdx) {
   }
 
   console.log(cart);
+}
+
+export function cartAdd(ID) {
+  cart[ID].qty++;
+  // console.log(cart);
+}
+
+export function cartSubtract(ID) {
+  cart[ID].qty--;
+  if (cart[ID].qty == 0) {
+    cart.splice(ID, 1);
+  }
+  // console.log(cart);
 }
