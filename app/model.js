@@ -183,11 +183,14 @@ export function changePage(pageID, callback) {
       callback();
     });
   } else if (pageID == "cart") {
-    $.get(`pages/${pageID}.html`, function (data) {
-      $("#app").html(data);
-      $.each(cart, function (idx, cartItem) {
-        $(".items").append(
-          `<div class="book">
+    if (jQuery.isEmptyObject(userInfo)) {
+      alert("Please Login or Sign-up to make purchases.");
+    } else {
+      $.get(`pages/${pageID}.html`, function (data) {
+        $("#app").html(data);
+        $.each(cart, function (idx, cartItem) {
+          $(".items").append(
+            `<div class="book">
             <div class="book-img">
              <img src="${bookList[cartItem.id].bookImage}" alt="">
             </div>
@@ -203,10 +206,11 @@ export function changePage(pageID, callback) {
             </div>
             </div>
             </div>`
-        );
+          );
+        });
+        callback();
       });
-      callback();
-    });
+    }
   } else if (pageID == "blog") {
     $.get(`pages/${pageID}.html`, function (data) {
       $("#app").html(data);
@@ -245,26 +249,28 @@ export function logInUser() {
 
 //CART FUNCTIONS
 export function addToCart(bookIdx) {
-  var dupCart = false;
-  var cartObj = {
-    id: bookIdx,
-    qty: 1,
-  };
-  if (cart.length > 0) {
-    console.log(cart.length);
-    for (var i = 0; i < cart.length; i++) {
-      if (cart[i].id == bookIdx) {
-        cart[i].qty++;
-        dupCart = true;
+  if (jQuery.isEmptyObject(userInfo)) {
+    alert("Please Login or Sign-up to make purchases.");
+  } else {
+    var dupCart = false;
+    var cartObj = {
+      id: bookIdx,
+      qty: 1,
+    };
+    if (cart.length > 0) {
+      console.log(cart.length);
+      for (var i = 0; i < cart.length; i++) {
+        if (cart[i].id == bookIdx) {
+          cart[i].qty++;
+          dupCart = true;
+        }
       }
     }
-  }
 
-  if (dupCart === false) {
-    cart.push(cartObj);
+    if (dupCart === false) {
+      cart.push(cartObj);
+    }
   }
-
-  console.log(cart);
 }
 
 export function cartAdd(ID) {
